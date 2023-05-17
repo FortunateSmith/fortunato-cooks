@@ -1,9 +1,10 @@
-// ingredients schema
+import {BsListColumns} from "react-icons/Bs"
 
 export default {
   title: "Ingredient",
   name: "ingredient",
   type: "document",
+  icon: BsListColumns,
   fields: [
     {
       title: "Name",

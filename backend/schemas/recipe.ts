@@ -1,7 +1,11 @@
+import {BiDockTop} from "react-icons/Bi"
+
+
 export default {
   name: 'recipe',
   title: 'Recipe',
   type: 'document',
+  icon: BiDockTop,
   fields: [
     {
       name: 'name',
