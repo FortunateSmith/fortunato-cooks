@@ -2,7 +2,7 @@
 
 export default {
   title: "Ingredient",
-  name: "ingredients",
+  name: "ingredient",
   type: "document",
   fields: [
     {
@@ -14,6 +14,11 @@ export default {
       title: "1 Cup in Grams",
       name: "cupsToGrams",
       type: "number",
+    },
+    {
+      title: "Options",
+      name: "options",
+      type: "string",
     }
 
   ]

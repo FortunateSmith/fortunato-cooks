@@ -1,3 +1,4 @@
-import ingredients from "./ingredients"
+import ingredient from "./ingredient"
+import recipe from "./recipe"
 
-export const schemaTypes = [ingredients]
+export const schemaTypes = [ingredient, recipe]
