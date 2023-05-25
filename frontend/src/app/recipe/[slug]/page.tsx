@@ -12,15 +12,15 @@ export async function generateStaticParams() {
   // fallback: true,
 }
 
-export default function Page({ params }: any) {
+export default function Page(props: any) {
   // const router = useRouter();
-  const { slug } = params;
-  console.log("Ingredients *********", slug);
+  const { name = "missing name" } = props.recipe;
+  console.log("Ingredients *********", { name});
   return (
     <article>
-      <h1>{slug}</h1>
-      {/* <h1>{name}</h1>
-      <p>{}</p> */}
+      {/* <h1>{slug}</h1> */}
+      <h1>{name}</h1>
+      <p>{}</p>
     </article>
   );
 }
