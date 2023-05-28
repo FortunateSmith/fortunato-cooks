@@ -1,0 +1,9 @@
+const recipe = await client.fetch(`*[_type == 'recipe' && _id = ${recipeID}][0]{name, ingredient[]{amount, unit, ingredient->{name}}}`)
+
+
+async function getRecipe(){
+  const recipeID = '0fafcc3f-fd01-4361-9db1-2ac0d971d39e';
+  const recipe = await client.fetch(`*[_type == 'recipe' && _id = ${recipeID}][0]{name, ingredient[]{amount, unit, ingredient->{name}}}`)
+  console.log("RECIPE ***", recipe)
+  return recipe;
+}
