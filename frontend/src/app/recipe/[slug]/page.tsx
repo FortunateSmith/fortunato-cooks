@@ -10,13 +10,13 @@ async function getRecipeIngredients() {
 }
 
 
-async function main() {
-  const forConsole = await getRecipeIngredients();
-  // const out = forConsole.map((o: any) => o.ingredient.name)
-  console.log("FORCONSOLE", forConsole.ingredient.map((i: any) => i.ingredient.name));
-}
+// async function main() {
+//   const forConsole = await getRecipeIngredients();
+//   // const out = forConsole.map((o: any) => o.ingredient.name)
+//   console.log("FORCONSOLE", forConsole.ingredient.map((i: any) => i.ingredient.name));
+// }
 
-main().catch(console.error);
+// main().catch(console.error);
 
 async function getRecipeName() {
   const recipeName = await client.fetch(`*[_type == 'recipe' && defined(slug.current)][].name`);
@@ -40,24 +40,25 @@ export async function generateStaticParams() {
 export default async function Page({ params }: any) {
   // const router = useRouter();
   const { slug } = params;
-  // const ingredientData = await getRecipeIngredients();
+  const ingredientData = await getRecipeIngredients();
   // const recipeName = getRecipeName();
-  // console.log(ingredientData)
+  console.log(ingredientData)
 
   // const [ingredientList] = await Promise.all([ingredientData]);
   // console.log("Recipe::::", recipe, "Ingredients *********", ingredientList.ingredient.map((obj:any) => obj.name));
   return (
     <article>
-      <h1>{slug}</h1>
-      {/* <h1>{recipe}</h1> */}
-      {/* {ingredientList.map((ingredient: any) => {
-        console.log(ingredient);
+      {/* <h1>{slug}</h1> */}
+      <h1>{ingredientData.name}</h1>
+      <h2>Ingredients</h2>
+      {ingredientData.ingredient.map((i: any) => {
+        console.log(i);
         return (
-          <ul key={ingredient.id}>
-            <li>{ingredient.name}</li>
+          <ul key={i.id}>
+            <li><span>{i.amount} {i.unit} of {i.ingredient.name}</span></li>
           </ul>
         );
-      })} */}
+      })}
       {/* <p>{ingredientList}</p> */}
     </article>
   );
