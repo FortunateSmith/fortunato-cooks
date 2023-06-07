@@ -1,4 +1,5 @@
 import {BiDockTop} from "react-icons/Bi"
+import IngredientForStep from "../components/IngredientForStep";
 
 
 export default {
@@ -7,6 +8,15 @@ export default {
   type: 'document',
   icon: BiDockTop,
   fields: [
+    {
+      name: 'ingredientForStep',
+      title: 'Ingredients for Step',
+      components: {
+        // imported component
+        input: IngredientForStep, 
+      },
+      type: 'ingredient',
+    },
     {
       name: 'name',
       title: 'Recipe Name',
@@ -87,6 +97,6 @@ export default {
       title: 'Method',
       type: 'array',
       of: [{type: 'block'}],
-    },
+    },    
   ],
 }
