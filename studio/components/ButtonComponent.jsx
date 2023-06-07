@@ -1,7 +1,8 @@
 import React from 'react'
 import {Button, Card, Inline} from '@sanity/ui'
 
-const ButtonComponent = ({buttonLabel}) => {
+const ButtonComponent = ({buttonLabel, onClick}) => {
+
   return (
     <div>
       <Card padding={4}>
@@ -12,9 +13,8 @@ const ButtonComponent = ({buttonLabel}) => {
             mode="ghost"
             padding={[3, 3, 4]}
             text={buttonLabel}
-            >
-
-            </Button>
+            onClick={onClick}
+            />
         </Inline>
       </Card>
     </div>
